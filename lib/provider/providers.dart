@@ -25,6 +25,7 @@ final userDatabaseProvider = Provider<UserDatabase>((ref) {
 final noteDatabaseProvider = Provider<NoteDatabase>((ref) {
   return NoteDatabase();
 });
+
 Session session1 = Session(
   $id: '',
   $createdAt: 1588888888,
