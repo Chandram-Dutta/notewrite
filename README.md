@@ -1,8 +1,14 @@
-# appwrite_testing
+# NoteWrite
+> A Flutter and Appwrite based Note Taking App
 
-A new Flutter project.
+## Screenshots
+---
+## Appwrite Info
+---
+Appwrite Constant are to be put in "constants/app_constants.dart"
 
-## Getting Started
+---
+## Getting Started with Flutter
 
 This project is a starting point for a Flutter application.
 
