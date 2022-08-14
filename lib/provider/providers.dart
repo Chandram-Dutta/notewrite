@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:notewrite/authentication/auth.dart';
 import 'package:notewrite/database/note_database.dart';
 import 'package:notewrite/database/user_database.dart';
+import 'package:notewrite/models/note_model.dart';
 import 'package:notewrite/routes/go_routes.dart';
 import 'package:notewrite/themes/theme.dart';
 
@@ -26,7 +27,9 @@ final userDatabaseProvider = Provider<UserDatabase>((ref) {
 final noteDatabaseProvider = Provider<NoteDatabase>((ref) {
   return NoteDatabase();
 });
-
+final editNoteProvider = StateProvider<Note>((ref) {
+  return Note(userId: "", title: "", body: "");
+});
 Session session1 = Session(
   $id: '',
   $createdAt: 1588888888,

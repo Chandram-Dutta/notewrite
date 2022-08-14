@@ -26,6 +26,20 @@ class NoteDatabase {
     );
   }
 
+  Future updateNote(
+    Note note,
+    String id,
+  ) async {
+    await databases.updateDocument(
+      collectionId: AppConstants.noteCollection,
+      documentId: id,
+      data: {
+        "title": note.title,
+        "body": note.body,
+      },
+    );
+  }
+
   Future deleteNote(
     String id,
   ) async {

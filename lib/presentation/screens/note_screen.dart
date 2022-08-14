@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notewrite/models/note_model.dart';
 import 'package:notewrite/presentation/widgets/change_theme_button.dart';
 import 'package:notewrite/provider/providers.dart';
+import 'package:notewrite/routes/go_routes.dart';
 
 class NoteScreen extends ConsumerWidget {
   const NoteScreen({Key? key, required this.id}) : super(key: key);
@@ -23,10 +24,24 @@ class NoteScreen extends ConsumerWidget {
                 maxLines: 1,
               );
             }),
-        actions: const [ChangeThemeButton()],
+        actions: const [
+          ChangeThemeButton(),
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () async {
+          String title = await ref
+              .watch(noteDatabaseProvider)
+              .getNote(id)
+              .then((note) => note.title);
+          String body = await ref
+              .watch(noteDatabaseProvider)
+              .getNote(id)
+              .then((note) => note.body);
+          ref.read(editNoteProvider.state).state =
+              Note(title: title, body: body, userId: id);
+          router.push('/edit-note');
+        },
         icon: const Icon(Icons.edit),
         label: const Text('Edit'),
       ),

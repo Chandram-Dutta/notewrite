@@ -45,7 +45,7 @@ class HomeScreen extends ConsumerWidget {
         ),
         body: FutureBuilder(
           builder: (context, AsyncSnapshot<List> snapshot) {
-            if (snapshot.hasData) {
+            if (snapshot.hasData && snapshot.data!.isNotEmpty) {
               return ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
@@ -146,8 +146,11 @@ class HomeScreen extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
-                  Icon(Icons.create, size: 100),
-                  Text('Create a Note'),
+                  Icon(Icons.create_rounded, size: 100),
+                  Text(
+                    'Create a Note',
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               ));
             }

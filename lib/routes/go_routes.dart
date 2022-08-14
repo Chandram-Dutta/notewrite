@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:notewrite/presentation/screens/account_screen.dart';
 import 'package:notewrite/presentation/screens/create_note_screen.dart';
+import 'package:notewrite/presentation/screens/edit_note_screen.dart';
 import 'package:notewrite/presentation/screens/home_screen.dart';
 import 'package:notewrite/presentation/screens/login_screen.dart';
 import 'package:notewrite/presentation/screens/note_screen.dart';
@@ -45,6 +46,12 @@ final GoRouter router = GoRouter(
         return NoteScreen(
           id: id.toString(),
         );
+      },
+    ),
+    GoRoute(
+      path: '/edit-note',
+      builder: (context, state) {
+        return const EditScreen();
       },
     ),
   ],
