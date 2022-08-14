@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
-import 'package:appwrite_testing/provider/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:notewrite/provider/providers.dart';
 
 import '../constants/app_constants.dart';
 

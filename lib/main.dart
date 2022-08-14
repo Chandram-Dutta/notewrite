@@ -1,8 +1,8 @@
-import 'package:appwrite_testing/constants/app_constants.dart';
-import 'package:appwrite_testing/provider/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/constants/app_constants.dart';
+import 'package:notewrite/provider/providers.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +25,7 @@ class MyApp extends ConsumerWidget {
     GoRouter router = ref.watch(goRouterProvider);
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Appwrite Testing',
+      title: 'NoteWrite',
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ref.watch(appThemeProvider).appColorScheme,

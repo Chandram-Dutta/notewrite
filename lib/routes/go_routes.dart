@@ -1,12 +1,13 @@
-import 'package:appwrite_testing/presentation/screens/account_screen.dart';
-import 'package:appwrite_testing/presentation/screens/create_note_screen.dart';
-import 'package:appwrite_testing/presentation/screens/home_screen.dart';
-import 'package:appwrite_testing/presentation/screens/login_screen.dart';
-import 'package:appwrite_testing/presentation/screens/note_screen.dart';
-import 'package:appwrite_testing/presentation/screens/registration_screen.dart';
-import 'package:appwrite_testing/presentation/screens/signup_screen.dart';
-import 'package:appwrite_testing/presentation/screens/splash_screen.dart';
+
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/presentation/screens/account_screen.dart';
+import 'package:notewrite/presentation/screens/create_note_screen.dart';
+import 'package:notewrite/presentation/screens/home_screen.dart';
+import 'package:notewrite/presentation/screens/login_screen.dart';
+import 'package:notewrite/presentation/screens/note_screen.dart';
+import 'package:notewrite/presentation/screens/registration_screen.dart';
+import 'package:notewrite/presentation/screens/signup_screen.dart';
+import 'package:notewrite/presentation/screens/splash_screen.dart';
 
 final GoRouter router = GoRouter(
   routes: [
@@ -28,7 +29,7 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/registration',
-      builder: (context, state) => const ResgistrationScreen(),
+      builder: (context, state) => const RegistrationScreen(),
     ),
     GoRoute(
       path: '/account',

@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
-import 'package:appwrite_testing/constants/app_constants.dart';
-import 'package:appwrite_testing/models/user_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:notewrite/constants/app_constants.dart';
+import 'package:notewrite/models/user_model.dart';
 
 class UserDatabase {
   Databases databases =

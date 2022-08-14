@@ -1,8 +1,8 @@
 import 'package:appwrite/models.dart';
-import 'package:appwrite_testing/provider/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/provider/providers.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Appwrite Testing'),
+          title: const Text('NoteWrite'),
           actions: [
             IconButton(
               icon: const Icon(Icons.person),
@@ -55,12 +55,11 @@ class HomeScreen extends ConsumerWidget {
                       },
                       title: Text(
                           snapshot.data?.elementAt(index).data['title'] ?? ''),
-                      subtitle: Text(snapshot.data
-                                  ?.elementAt(index)
-                                  .data['body']
-                                  .substring(0, 10) +
-                              "..." ??
-                          ''),
+                      subtitle: Text(
+                        snapshot.data?.elementAt(index).data['body'] ?? '',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   );
                 },

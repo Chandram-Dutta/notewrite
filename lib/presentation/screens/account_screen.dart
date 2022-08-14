@@ -1,8 +1,8 @@
 import 'package:appwrite/models.dart';
-import 'package:appwrite_testing/presentation/widgets/change_theme_button.dart';
-import 'package:appwrite_testing/presentation/widgets/loading_dialog.dart';
-import 'package:appwrite_testing/presentation/widgets/timestamp.dart';
-import 'package:appwrite_testing/provider/providers.dart';
+import 'package:notewrite/presentation/widgets/change_theme_button.dart';
+import 'package:notewrite/presentation/widgets/loading_dialog.dart';
+import 'package:notewrite/presentation/widgets/timestamp.dart';
+import 'package:notewrite/provider/providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

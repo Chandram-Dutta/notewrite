@@ -1,18 +1,18 @@
 import 'package:appwrite/models.dart';
-import 'package:appwrite_testing/models/user_model.dart';
-import 'package:appwrite_testing/presentation/widgets/loading_dialog.dart';
-import 'package:appwrite_testing/provider/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/models/user_model.dart';
+import 'package:notewrite/presentation/widgets/loading_dialog.dart';
+import 'package:notewrite/provider/providers.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 final numberPickerProvider = StateProvider<int>((ref) {
   return 1;
 });
 
-class ResgistrationScreen extends ConsumerWidget {
-  const ResgistrationScreen({Key? key}) : super(key: key);
+class RegistrationScreen extends ConsumerWidget {
+  const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -1,11 +1,12 @@
 import 'package:appwrite/models.dart';
-import 'package:appwrite_testing/authentication/auth.dart';
-import 'package:appwrite_testing/database/note_database.dart';
-import 'package:appwrite_testing/database/user_database.dart';
-import 'package:appwrite_testing/routes/go_routes.dart';
-import 'package:appwrite_testing/themes/theme.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/authentication/auth.dart';
+import 'package:notewrite/database/note_database.dart';
+import 'package:notewrite/database/user_database.dart';
+import 'package:notewrite/routes/go_routes.dart';
+import 'package:notewrite/themes/theme.dart';
 
 final sesiIdProvider = StateProvider((ref) => '');
 final sessionProvider = StateProvider<Session>((ref) => session1);
