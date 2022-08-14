@@ -2,7 +2,6 @@ import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
 import 'package:notewrite/constants/app_constants.dart';
 import 'package:notewrite/models/note_model.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class NoteDatabase {
   Databases databases =
@@ -11,7 +10,6 @@ class NoteDatabase {
   Future createNote(
     Note note,
     String uid,
-    WidgetRef ref,
   ) async {
     await databases.createDocument(
       collectionId: AppConstants.noteCollection,
@@ -28,10 +26,32 @@ class NoteDatabase {
     );
   }
 
+  Future deleteNote(
+    String id,
+  ) async {
+    await databases.deleteDocument(
+      collectionId: AppConstants.noteCollection,
+      documentId: id,
+    );
+  }
+
   Future<List<Document>> getNotes() async {
     DocumentList result = await databases.listDocuments(
       collectionId: AppConstants.noteCollection,
     );
     return result.documents;
+  }
+
+  Future<Note> getNote(
+    String id,
+  ) async {
+    Document result = await databases.getDocument(
+      collectionId: AppConstants.noteCollection,
+      documentId: id,
+    );
+    return Note(
+        body: result.data["body"],
+        title: result.data["title"],
+        userId: result.data["user_id"]);
   }
 }

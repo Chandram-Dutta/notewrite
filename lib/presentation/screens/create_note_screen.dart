@@ -1,9 +1,9 @@
-import 'package:notewrite/models/note_model.dart';
-import 'package:notewrite/presentation/widgets/loading_dialog.dart';
-import 'package:notewrite/provider/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/models/note_model.dart';
+import 'package:notewrite/presentation/widgets/loading_dialog.dart';
+import 'package:notewrite/provider/providers.dart';
 
 class CreateNoteScreen extends ConsumerWidget {
   const CreateNoteScreen({Key? key}) : super(key: key);
@@ -27,10 +27,10 @@ class CreateNoteScreen extends ConsumerWidget {
                   userId: ref.watch(currentUserProvider).$id,
                 ),
                 ref.watch(currentUserProvider).$id,
-                ref,
               );
           // ignore: use_build_context_synchronously
           Navigator.pop(context);
+          await ref.refresh(noteDatabaseProvider).getNotes();
           route.pop();
         },
         label: const Text("Save"),

@@ -1,4 +1,3 @@
-
 import 'package:go_router/go_router.dart';
 import 'package:notewrite/presentation/screens/account_screen.dart';
 import 'package:notewrite/presentation/screens/create_note_screen.dart';
@@ -42,11 +41,9 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/note',
       builder: (context, state) {
-        final title = state.queryParams['title'];
-        final body = state.queryParams['body'];
+        final id = state.queryParams['id'];
         return NoteScreen(
-          title: title.toString(),
-          body: body.toString(),
+          id: id.toString(),
         );
       },
     ),
