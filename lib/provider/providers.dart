@@ -1,5 +1,4 @@
 import 'package:appwrite/models.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notewrite/authentication/auth.dart';
@@ -7,6 +6,7 @@ import 'package:notewrite/database/note_database.dart';
 import 'package:notewrite/database/user_database.dart';
 import 'package:notewrite/models/note_model.dart';
 import 'package:notewrite/routes/go_routes.dart';
+import 'package:notewrite/storage/profile_picture_storage.dart';
 import 'package:notewrite/themes/theme.dart';
 
 final sesiIdProvider = StateProvider((ref) => '');
@@ -29,6 +29,9 @@ final noteDatabaseProvider = Provider<NoteDatabase>((ref) {
 });
 final editNoteProvider = StateProvider<Note>((ref) {
   return Note(userId: "", title: "", body: "");
+});
+final profilePictureStorageProvider = Provider<ProfilePictureStorage>((ref) {
+  return ProfilePictureStorage();
 });
 Session session1 = Session(
   $id: '',

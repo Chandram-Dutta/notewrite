@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:appwrite/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,6 +26,26 @@ class RegistrationScreen extends ConsumerWidget {
         title: const Text("Registration"),
       ),
       body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: InkWell(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            onTap: () async {
+              await ref
+                  .watch(profilePictureStorageProvider)
+                  .uploadProfilePicture(ref.watch(currentUserProvider).$id);
+
+              ref
+                  .refresh(profilePictureStorageProvider)
+                  .getProfilePicture(ref.watch(currentUserProvider).$id);
+            },
+            child: ref
+                .watch(profilePictureStorageProvider)
+                .getProfilePicture(userProvider.$id),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(

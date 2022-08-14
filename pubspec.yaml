@@ -29,6 +29,7 @@ environment:
 dependencies:
   appwrite: ^6.0.0
   cupertino_icons: ^1.0.2
+  file_picker: ^5.0.1
   flutter:
     sdk: flutter
   flutter_riverpod: ^1.0.4
@@ -36,6 +37,7 @@ dependencies:
   go_router: ^4.2.7
   intl: ^0.17.0
   numberpicker: ^2.1.1
+  path_provider: ^2.0.11
 
 dependency_overrides:
   flutter_web_auth:

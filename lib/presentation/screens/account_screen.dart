@@ -1,12 +1,12 @@
 import 'package:appwrite/models.dart';
-import 'package:notewrite/presentation/widgets/change_theme_button.dart';
-import 'package:notewrite/presentation/widgets/loading_dialog.dart';
-import 'package:notewrite/presentation/widgets/timestamp.dart';
-import 'package:notewrite/provider/providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notewrite/presentation/widgets/change_theme_button.dart';
+import 'package:notewrite/presentation/widgets/loading_dialog.dart';
+import 'package:notewrite/presentation/widgets/timestamp.dart';
+import 'package:notewrite/provider/providers.dart';
 
 class AccountScreen extends ConsumerWidget {
   const AccountScreen({Key? key}) : super(key: key);
@@ -22,6 +22,26 @@ class AccountScreen extends ConsumerWidget {
         ),
         body: ListView(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                onTap: () async {
+                  await ref
+                      .watch(profilePictureStorageProvider)
+                      .uploadProfilePicture(ref.watch(currentUserProvider).$id);
+
+                  ref
+                      .refresh(profilePictureStorageProvider)
+                      .getProfilePicture(ref.watch(currentUserProvider).$id);
+                },
+                child: ref
+                    .watch(profilePictureStorageProvider)
+                    .getProfilePicture(userProvider.$id),
+              ),
+            ),
             Card(
               child: ListTile(
                 title: const Text("Email"),
