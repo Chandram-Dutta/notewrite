@@ -14,15 +14,15 @@ String readTimestamp(int timestamp) {
     time = "${format.format(date)} Today";
   } else if (diff.inDays > 0 && diff.inDays < 7) {
     if (diff.inDays == 1) {
-      time = '${diff.inDays} DAY AGO';
+      time = '${diff.inDays} day ago';
     } else {
-      time = '${diff.inDays} DAYS AGO';
+      time = '${diff.inDays} days ago';
     }
   } else {
     if (diff.inDays == 7) {
-      time = '${(diff.inDays / 7).floor()} WEEK AGO';
+      time = '${(diff.inDays / 7).floor()} week ago';
     } else {
-      time = '${(diff.inDays / 7).floor()} WEEKS AGO';
+      time = '${(diff.inDays / 7).floor()} weeks ago';
     }
   }
 
